@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><h1>Student Badge Generator</h1></head>
+<body>
+<form id="form">
+Name:
+<input type="text" id="name" placeholder="Name"><br>
+Skillname:
+<input type="text" id="skillname" placeholder="Skill"><br>
+Credits:
+<input type="text" id="credits" placeholder="Credits" ><br>
+</form>
+<style>
+#name{
+	color:red;
+	font-weight:bold;
+}
+#skillname{
+	color:blue;
+	font-weight:bold;
+}
+#submit{
+	background-color:green;
+	color:black;
+	font-weight:bold;
+	border-radius:20px;
+}
+head{
+	font-weight:bold;
+}
+</style>
+<script>
+let name=document.getElementById("name").value;
+let skill=document.getElementById("skillname").value;
+let credits=document.getElementById("credits").value;
+let Credits=Number(credits);
+function Validate(){
+	if(name == "" ||skill == ""||Credits == ""){
+		alert("All fields required!");
+	}
+	if(Credits>90 && Credits<=100){
+		document.write("Excellent Badge");
+	}
+	else if(Credits>70 && Credits<=90){
+		document.write("Very Good Badge");
+	}
+	else if(Credits>50 && Credits<=70){
+		document.write("Good Badge");
+	}
+	else if(Credits<=50){
+		document.write("Average Badge");
+	}
+}
+</script>
+<button id="submit" onclick="Validate()">Submit</button>
+</body>
+</html>
+	
